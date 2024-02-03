@@ -1,0 +1,103 @@
+{
+  "env": {
+      "browser": true,
+      "es2021": true
+  },
+  "extends": [
+      "react-app",
+      "plugin:react/recommended",
+      "airbnb",
+      "airbnb-typescript",
+      "plugin:import/typescript"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "tsconfig.json"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": ["off"],
+    "react/jsx-props-no-spreading": ["warn"],
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "react/prop-types": "off", // Since we do not use prop-types
+    "react/require-default-props": "off", // Since we do not use prop-types
+    "no-shadow": "off",
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "max-len": [
+      2,
+      {
+        "code": 130
+      }
+    ],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "parent",
+            "sibling"
+          ]
+        ],
+        "newlines-between": "always"
+      }
+    ],
+    "react/jsx-indent": [
+      "error",
+      2
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "format": [
+          "PascalCase"
+        ],
+        "prefix": [
+          "I"
+        ],
+        "selector": "interface"
+      },
+      {
+        "format": [
+          "PascalCase"
+        ],
+        "prefix": [
+          "T"
+        ],
+        "selector": [
+          "typeAlias"
+        ]
+      },
+      {
+        "format": [
+          "StrictPascalCase"
+        ],
+        "prefix": [
+          "E"
+        ],
+        "selector": "enum"
+      }
+    ],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+  }
+}
