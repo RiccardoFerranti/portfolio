@@ -1,15 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { ThemeProvider } from "styled-components";
+import reportWebVitals from "./reportWebVitals";
+import App from "./App";
+import Theme from "./Theme";
+import { EPPageBannerProvider } from "./FlipProvider";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={Theme}>
+      <EPPageBannerProvider>
+        <App />
+      </EPPageBannerProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
