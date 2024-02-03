@@ -1,5 +1,7 @@
 import { useState, useReducer } from "react";
 import emailjs from "@emailjs/browser";
+import { toast, ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 import TextInput from "../components/inputs/TextInput";
 import TextArea from "../components/inputs/TextArea";
 import LABELS from "../consts/labels";
@@ -20,6 +22,8 @@ export default function Form() {
   useFormValidation(formState, activeFields, dispatch);
 
   const resetFormState = () => {
+    setActiveFields([]);
+
     dispatch({ 
       type: RESET_FORM_STATE,
       payload: initialFormState
@@ -62,6 +66,9 @@ export default function Form() {
 
     if(!error) {
       console.log('submit')
+      // toast.success(LABELS.notififications.emailSuccess, {
+      //   position: "top-center"
+      // });
       // emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then(
       //   (result) => {
       //     console.log(result.text);
@@ -69,9 +76,12 @@ export default function Form() {
       //     //   icon: ‘success',
       //     //   title: ‘Message Sent Successfully'
       //     // })
-      //     resetForm();
+      //     resetFormState();
       //   },
       //   (error) => {
+        // toast.error(LABELS.notififications.emailError, {
+        //   position: "top-center"
+        // });
       //     console.log(error.text);
       //     // Swal.fire({
       //     //   icon: ‘error',
@@ -81,7 +91,7 @@ export default function Form() {
       //   }
       // );
     }
-    // resetForm();
+    // resetFormState();
   };
 
   console.log('activeFields', activeFields)
@@ -124,11 +134,11 @@ export default function Form() {
         text={LABELS.buttons.back}
         onClick={() => {
           resetFormState();
-          setActiveFields([])
           setFlip(false);
         }}
         bgDark
       />
+      <ToastContainer />
     </StyledForm>
   );
 }

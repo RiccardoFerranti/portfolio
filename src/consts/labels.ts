@@ -1,4 +1,8 @@
 const LABELS = {
+  notififications: {
+    emailSuccess: 'Thank you to having contacted me. I\'ll reply you soon!',
+    emailError: 'The email wasn\'t sent, an unexpected error occurred, please try again',
+  },
   buttons: {
     workWithMe: 'Work with me',
     submit: 'Submit',
