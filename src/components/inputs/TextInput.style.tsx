@@ -1,16 +1,16 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 interface IStyledInputText {
   $error: string | null,
 }
 
-export const StyledInputText = styled.div<IStyledInputText>`
+const StyledInputText = styled.div<IStyledInputText>`
   color: ${({ theme }) => theme.colors.white};
 
   input {
     color: ${({ theme }) => theme.colors.grayDark};
     background-color: rgba(255, 255, 255, 0.35);
-    border: 1px solid ${({ theme, $error }) => !$error ? theme.colors.grayDark : theme.colors.red};
+    border: 1px solid ${({ theme, $error }) => (!$error ? theme.colors.grayDark : theme.colors.red)};
     width: 100%;
     height: 45px;
     box-shadow: none;
@@ -30,3 +30,5 @@ export const StyledInputText = styled.div<IStyledInputText>`
     }
   }
 `;
+
+export default StyledInputText;

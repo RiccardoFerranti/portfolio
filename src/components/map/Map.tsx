@@ -2,11 +2,11 @@ interface IMapLinkProps {
   address: string;
 }
 
-const MapLink = (props: IMapLinkProps) => {
+function MapLink(props: IMapLinkProps) {
   const { address } = props;
 
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    address
+    address,
   )}`;
 
   return (
@@ -14,6 +14,6 @@ const MapLink = (props: IMapLinkProps) => {
       {address}
     </a>
   );
-};
+}
 
 export default MapLink;

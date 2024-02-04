@@ -1,17 +1,18 @@
-import styled from "styled-components";
-import { size } from '../../consts/breakpoints';
+import styled from 'styled-components';
+
+import BREAKPOINTS from '../../consts/breakpoints';
 
 interface IStyledCardWrapper {
   $flip: boolean
 }
 
-export const StyledCardWrapper = styled("div")<IStyledCardWrapper>`
+export const StyledCardWrapper = styled('div')<IStyledCardWrapper>`
   width: 416px;
   height: 576px;
   position: relative;
 
   & > div {
-    transform: ${props => props.$flip ? 'rotateY(180deg)' : 'rotateY(0deg)'};
+    transform: ${(props) => (props.$flip ? 'rotateY(180deg)' : 'rotateY(0deg)')};
   }
 `;
 
@@ -33,7 +34,7 @@ export const StyledCardFlip = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: ${size.mobile}) {
+  @media screen and (max-width: ${BREAKPOINTS.mobile}) {
     width: 375px;
   }
 `;
@@ -65,7 +66,7 @@ export const StyledCard = styled.div`
     position: absolute;
   }
 
-  @media screen and (max-width: ${size.mobile}) {
+  @media screen and (max-width: ${BREAKPOINTS.mobile}) {
     width: 358px;
 
     &::before {

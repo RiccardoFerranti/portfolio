@@ -1,4 +1,6 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import {
+  createContext, useContext, useMemo, useState,
+} from 'react';
 
 interface IFlipContextType {
   children: React.ReactNode | React.ReactNode[];

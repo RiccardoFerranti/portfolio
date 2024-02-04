@@ -1,11 +1,12 @@
+import profile from 'assets/profile.png';
+
 import {
   StyledAbout,
   StyledProfile,
   StyledTitle,
   StyledSubTitle,
   StyledDescription,
-} from "./About.style";
-import profile from "../assets/profile.png";
+} from './About.style';
 
 export default function About() {
   return (

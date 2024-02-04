@@ -1,4 +1,6 @@
-import LABELS from "../consts/labels";
+import LABELS from 'consts/labels';
+import { ECompanies } from 'commonTypes';
+
 import {
   StyledExperience,
   StyledExperienceTimelineContainer,
@@ -7,9 +9,8 @@ import {
   StyledExperienceTimelineYear,
   StyledExperienceTimelineContent,
   StyledExperienceTimelineTags,
-} from "./Experience.style";
-import { COMPANIES, TAGS } from "./consts";
-import { ECompanies } from "../commonTypes";
+} from './Experience.style';
+import { COMPANIES, TAGS } from './consts';
 
 export default function Experience() {
   return (
@@ -30,9 +31,7 @@ export default function Experience() {
                   <p>{LABELS.descriptions[currentCompany]}</p>
                   {TAGS[currentCompany].length ? (
                     <StyledExperienceTimelineTags>
-                      {TAGS[currentCompany].map((tag: string) => {
-                        return <li key={tag}>{tag}</li>;
-                      })}
+                      {TAGS[currentCompany].map((tag: string) => <li key={tag}>{tag}</li>)}
                     </StyledExperienceTimelineTags>
                   ) : null}
                 </StyledExperienceTimelineContent>

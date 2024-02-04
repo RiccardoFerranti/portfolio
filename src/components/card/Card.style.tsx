@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledCardCLip = styled.div`
   width: 82px;
@@ -17,14 +17,14 @@ interface IStyledCardBadgeCord {
   $flip: boolean;
 }
 
-export const StyledCardBadgeCord = styled("div")<IStyledCardBadgeCord>`
+export const StyledCardBadgeCord = styled('div')<IStyledCardBadgeCord>`
   width: 54px;
   height: 69px;
   background: #000;
-  transform: ${({ $flip }) => (!$flip ? "skew(25deg)" : "skew(-25deg)")};
+  transform: ${({ $flip }) => (!$flip ? 'skew(25deg)' : 'skew(-25deg)')};
   position: absolute;
   top: -15px;
-  left: ${({ $flip }) => (!$flip ? "calc(50% - 44px)" : "calc(50% - 10px)")};
+  left: ${({ $flip }) => (!$flip ? 'calc(50% - 44px)' : 'calc(50% - 10px)')};
   z-index: 4;
   box-shadow: 0px -3px 3px #000;
 `;
@@ -34,5 +34,5 @@ export const StyledCardBody = styled.div`
   height: 100%;
   position: relative;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;

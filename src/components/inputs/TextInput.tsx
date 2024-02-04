@@ -1,4 +1,4 @@
-import { StyledInputText } from "./TextInput.style";
+import StyledInputText from './TextInput.style';
 import { StyledLabel, StyledError } from './CommonStyle';
 
 interface ITextInputProps {
@@ -11,19 +11,22 @@ interface ITextInputProps {
 }
 
 export default function TextInput(props: ITextInputProps) {
-  const { name, label, value, placeholder, handleOnChange, error } = props;
+  const {
+    name, label, value, placeholder, handleOnChange, error,
+  } = props;
 
   return (
     <StyledInputText $error={error}>
-      <label>
+      <label htmlFor={name}>
         <StyledLabel>{label}</StyledLabel>
         <input
+          id={name}
           name={name}
           placeholder={placeholder}
           type="text"
           value={value}
           onChange={(e) => {
-            handleOnChange(name, e.target.value.trim())
+            handleOnChange(name, e.target.value.trim());
           }}
         />
         {error ? <StyledError>{error}</StyledError> : null}

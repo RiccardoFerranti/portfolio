@@ -1,1 +1,3 @@
-export const MAX_LENGTH_TEXTAREA = 300;
+const MAX_LENGTH_TEXTAREA = 300;
+
+export default MAX_LENGTH_TEXTAREA;

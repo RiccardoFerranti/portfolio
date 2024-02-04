@@ -1,7 +1,7 @@
-import { validateField } from "./utils";
+import validateField from './validate.schema';
 
-export const SET_FORM_STATE = "SET_FORM_STATE";
-export const RESET_FORM_STATE = "RESET_FORM_STATE";
+export const SET_FORM_STATE = 'SET_FORM_STATE';
+export const RESET_FORM_STATE = 'RESET_FORM_STATE';
 
 const formReducer = (state: any, action: any) => {
   switch (action.type) {
@@ -14,7 +14,7 @@ const formReducer = (state: any, action: any) => {
             ...state.form.fields,
             [action.payload.name]: {
               value: action.payload.value,
-              error: validateField(action.payload.value, action.payload.name)
+              error: validateField(action.payload.value, action.payload.name),
             },
           },
         },
@@ -22,8 +22,7 @@ const formReducer = (state: any, action: any) => {
     }
 
     case RESET_FORM_STATE: {
-      console.log(action.payload)
-      return action.payload
+      return action.payload;
     }
 
     default:

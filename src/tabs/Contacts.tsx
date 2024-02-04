@@ -1,7 +1,8 @@
-import { useFlipProvider } from "../FlipProvider";
-import Button from "../components/buttons/Button";
-import MapLink from "../components/map/Map";
-import LABELS from "../consts/labels";
+import Button from 'components/buttons/Button';
+import MapLink from 'components/map/Map';
+import LABELS from 'consts/labels';
+import { useFlipProvider } from 'FlipProvider';
+
 import {
   StyledBsGeoAltFill,
   StyledContacts,
@@ -11,7 +12,7 @@ import {
   StyledIconContainer,
   StyledMdEmail,
   StyledPiGithubLogoFill,
-} from "./Contacts.style";
+} from './Contacts.style';
 
 export default function Contacts() {
   const { setFlip } = useFlipProvider();

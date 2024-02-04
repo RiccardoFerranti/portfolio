@@ -1,4 +1,4 @@
-import LABELS from "../consts/labels"
+import LABELS from '../consts/labels';
 
 export interface IInitialFormState {
   form: {
@@ -34,12 +34,12 @@ export const initialFormState: IInitialFormState = {
         value: '',
         error: null,
       },
-    }
-  }
+    },
+  },
 };
 
 export const FORM_FIELDS = [
   LABELS.form.name.field,
   LABELS.form.email.field,
   LABELS.form.message.field,
-]
+];

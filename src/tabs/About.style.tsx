@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { StyledTab } from "./CommonStyle";
+import styled from 'styled-components';
+
+import StyledTab from './CommonStyle';
 
 export const StyledAbout = styled(StyledTab)`
   height: 400px;

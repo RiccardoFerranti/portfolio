@@ -1,8 +1,9 @@
-import { useFlipProvider } from "../../FlipProvider";
-import CardBack from "./CardBack";
-import CardFront from "./CardFront";
-import { StyledCardFlip, StyledCardWrapper } from "./CommonStyle";
-import useDelayedFlip from "../../hooks/useDelayedFlip";
+import useDelayedFlip from 'hooks/useDelayedFlip';
+import { useFlipProvider } from 'FlipProvider';
+
+import CardBack from './CardBack';
+import CardFront from './CardFront';
+import { StyledCardFlip, StyledCardWrapper } from './CommonStyle';
 
 export default function Card() {
   const { flip } = useFlipProvider();

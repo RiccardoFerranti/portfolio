@@ -1,11 +1,12 @@
-import styled from "styled-components";
-import { StyledTab } from "./CommonStyle";
+import styled from 'styled-components';
+
+import StyledTab from './CommonStyle';
 
 export const StyledExperience = styled(StyledTab)`
   height: 400px;
 `;
 
-export const StyledExperienceTimelineContainer = styled("section")`
+export const StyledExperienceTimelineContainer = styled('section')`
   max-height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -15,7 +16,7 @@ export const StyledExperienceTimelineContainer = styled("section")`
   }
 `;
 
-export const StyledExperienceTimeline = styled("div")`
+export const StyledExperienceTimeline = styled('div')`
   position: relative;
 
   &:after {
@@ -30,12 +31,12 @@ export const StyledExperienceTimeline = styled("div")`
   }
 `;
 
-export const StyledExperienceTimelineItem = styled("article")`
+export const StyledExperienceTimelineItem = styled('article')`
   position: relative;
   cursor: pointer;
 `;
 
-export const StyledExperienceTimelineYear = styled("h3")`
+export const StyledExperienceTimelineYear = styled('h3')`
   color: ${({ theme }) => theme.colors.white};
   font-size: 13px;
   font-weight: 400;
@@ -43,7 +44,7 @@ export const StyledExperienceTimelineYear = styled("h3")`
   top: 0;
 `;
 
-export const StyledExperienceTimelineContent = styled("div")`
+export const StyledExperienceTimelineContent = styled('div')`
   position: relative;
   padding: 0 0 10px 93px;
 
@@ -94,7 +95,7 @@ export const StyledExperienceTimelineContent = styled("div")`
     border-radius: 50%;
     position: absolute;
     top: 0;
-    left: 72px;
+    left: 73px;
     z-index: 2;
   }
 
@@ -105,7 +106,7 @@ export const StyledExperienceTimelineContent = styled("div")`
   }
 `;
 
-export const StyledExperienceTimelineTags = styled("ul")`
+export const StyledExperienceTimelineTags = styled('ul')`
   display: inline-flex;
   list-style: none;
   flex-wrap: wrap;

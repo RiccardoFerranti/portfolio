@@ -1,6 +1,7 @@
-import styled from "styled-components";
-import { StyledCard } from "./CommonStyle";
-import { size } from "../../consts/breakpoints";
+import styled from 'styled-components';
+
+import { StyledCard } from './CommonStyle';
+import BREAKPOINTS from '../../consts/breakpoints';
 
 export const StyledCardFront = styled(StyledCard)`
   transform: rotateY(0deg);
@@ -28,14 +29,14 @@ export const StyledCardContent = styled.div<IStyledCardTabs>`
   top: 0;
   transition: all 0.3s;
 
-  ${({ tabSelected }) => tabSelected === 1 && `left: 0;`}
-  ${({ tabSelected }) => tabSelected === 2 && `left: -344px;`}
-  ${({ tabSelected }) => tabSelected === 3 && `left: -688px;`}
+  ${({ tabSelected }) => tabSelected === 1 && 'left: 0;'}
+  ${({ tabSelected }) => tabSelected === 2 && 'left: -344px;'}
+  ${({ tabSelected }) => tabSelected === 3 && 'left: -688px;'}
 
-  @media screen and (max-width: ${size.mobile}) {
-    ${({ tabSelected }) => tabSelected === 1 && `left: 0;`}
-    ${({ tabSelected }) => tabSelected === 2 && `left: -302px;`}
-    ${({ tabSelected }) => tabSelected === 3 && `left: -604px;`}
+  @media screen and (max-width: ${BREAKPOINTS.mobile}) {
+    ${({ tabSelected }) => tabSelected === 1 && 'left: 0;'}
+    ${({ tabSelected }) => tabSelected === 2 && 'left: -302px;'}
+    ${({ tabSelected }) => tabSelected === 3 && 'left: -604px;'}
   }
 `;
 
@@ -52,16 +53,18 @@ export const StyledCardNavTabs = styled.ul<IStyledCardTabs>`
   li {
     width: 33.333%;
     height: 56px;
-    padding: 32px 0;
-    text-align: center;
-    color: ${({ theme }) => theme.colors.white};
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 300;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+
+    button {
+      height: 100%;
+      width: 100%;
+      font-size: 14px;
+      color: ${({ theme }) => theme.colors.white};
+      text-transform: uppercase;
+      font-weight: 300;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
 
     &:nth-child(1):hover ~ li.tab__slider {
       left: 0;
@@ -102,9 +105,9 @@ export const StyledCardNavTabs = styled.ul<IStyledCardTabs>`
         font-weight: 400;
         z-index: 3;
 
-        ${({ tabSelected }) => tabSelected === 1 && `left: 0;`}
-        ${({ tabSelected }) => tabSelected === 2 && `left: 33.333%`}
-        ${({ tabSelected }) => tabSelected === 3 && `left: 66.666%`}
+        ${({ tabSelected }) => tabSelected === 1 && 'left: 0;'}
+        ${({ tabSelected }) => tabSelected === 2 && 'left: 33.333%'}
+        ${({ tabSelected }) => tabSelected === 3 && 'left: 66.666%'}
       }
     }
   }

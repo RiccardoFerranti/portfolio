@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const StyledApp = styled.main`
+const StyledApp = styled.main`
   width: 100%;
   height: auto;
   min-height: 100dvh;
@@ -8,3 +8,5 @@ export const StyledApp = styled.main`
   justify-content: center;
   align-items: center;
 `;
+
+export default StyledApp;
