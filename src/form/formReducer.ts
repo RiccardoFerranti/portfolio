@@ -1,9 +1,10 @@
+import { IInitialFormState } from './consts';
 import validateField from './validate.schema';
 
 export const SET_FORM_STATE = 'SET_FORM_STATE';
 export const RESET_FORM_STATE = 'RESET_FORM_STATE';
 
-const formReducer = (state: any, action: any) => {
+const formReducer = (state: IInitialFormState, action: any) => {
   switch (action.type) {
     case SET_FORM_STATE: {
       return {

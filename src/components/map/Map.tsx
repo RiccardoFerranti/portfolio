@@ -1,3 +1,5 @@
+import { MAP_URL } from './consts';
+
 interface IMapLinkProps {
   address: string;
 }
@@ -5,7 +7,7 @@ interface IMapLinkProps {
 function MapLink(props: IMapLinkProps) {
   const { address } = props;
 
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  const googleMapsUrl = `${MAP_URL}${encodeURIComponent(
     address,
   )}`;
 

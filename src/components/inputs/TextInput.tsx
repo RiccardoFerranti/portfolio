@@ -1,7 +1,7 @@
 import StyledInputText from './TextInput.style';
 import { StyledLabel, StyledError } from './CommonStyle';
 
-interface ITextInputProps {
+export interface ITextInputProps {
   name: string;
   label: string;
   value: string;
@@ -21,6 +21,7 @@ export default function TextInput(props: ITextInputProps) {
         <StyledLabel>{label}</StyledLabel>
         <input
           id={name}
+          data-testid={name}
           name={name}
           placeholder={placeholder}
           type="text"

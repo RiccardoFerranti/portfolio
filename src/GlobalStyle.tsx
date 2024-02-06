@@ -9,15 +9,15 @@ const GlobalStyle = createGlobalStyle<{ theme: TTheme }>`
     padding: 0;
     
     // Firefox scrollbar
-    @-moz-document url-prefix() {
+    /* @-moz-document url-prefix() {
       scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
       scrollbar-width: 8px;
-    }
+    } */
   }
 
   /* Chrome scrollbar */
   *::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
   }
 
   *::-webkit-scrollbar-thumb {

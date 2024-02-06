@@ -2,7 +2,7 @@ import { StyledMessageLength, StyledTextArea, StyledTextAreaFooter } from './Tex
 import { StyledLabel, StyledError } from './CommonStyle';
 import MAX_LENGTH_TEXTAREA from './const';
 
-interface ITextAreatProps {
+export interface ITextAreatProps {
   name: string;
   label: string;
   value: string;
@@ -22,6 +22,7 @@ export default function TextArea(props: ITextAreatProps) {
         <StyledLabel>{label}</StyledLabel>
         <textarea
           id={name}
+          data-testid={name}
           name={name}
           placeholder={placeholder}
           value={value}
