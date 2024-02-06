@@ -26,10 +26,7 @@ export default function Form() {
   const resetFormState = () => {
     setActiveFields([]);
 
-    dispatch({
-      type: RESET_FORM_STATE,
-      payload: initialFormState,
-    });
+    dispatch({ type: RESET_FORM_STATE });
   };
 
   const onLeaveForm = () => {
@@ -68,7 +65,7 @@ export default function Form() {
     setActiveFields(FORM_FIELDS);
 
     const error = FORM_FIELDS.some((field) => {
-      const fieldValue = formState.form.fields[field].value;
+      const fieldValue = formState.form.fields[field as keyof typeof formState.form.fields].value;
       return validateField(fieldValue, field)?.length;
     });
 
