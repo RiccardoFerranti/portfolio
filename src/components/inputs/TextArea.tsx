@@ -27,7 +27,7 @@ export default function TextArea(props: ITextAreatProps) {
           placeholder={placeholder}
           value={value}
           onChange={(e) => {
-            handleOnChange(name, e.target.value.trim());
+            handleOnChange(name, e.target.value);
           }}
         />
         <StyledTextAreaFooter>

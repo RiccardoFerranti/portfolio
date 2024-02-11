@@ -1,4 +1,4 @@
-import { FC, ReactElement, PropsWithChildren } from 'react';
+import { ReactElement, PropsWithChildren } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import FlipProvider from 'FlipProvider';
@@ -9,13 +9,15 @@ const renderWithProvider = (
   ui: ReactElement,
   renderOptions?: RenderOptions,
 ): ReturnType<typeof render> => {
-  const Wrapper: FC<PropsWithChildren<{}>> = ({ children }) => (
-    <ThemeProvider theme={Theme}>
-      <FlipProvider>
-        {children}
-      </FlipProvider>
-    </ThemeProvider>
-  );
+  const Wrapper: React.FC<PropsWithChildren<{}>> = function Wrapper({ children }) {
+    return (
+      <ThemeProvider theme={Theme}>
+        <FlipProvider>
+          {children}
+        </FlipProvider>
+      </ThemeProvider>
+    );
+  };
 
   return render(ui, { wrapper: Wrapper, ...renderOptions });
 };

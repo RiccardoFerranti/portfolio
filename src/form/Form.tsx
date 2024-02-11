@@ -5,6 +5,7 @@ import TextArea from 'components/inputs/TextArea';
 import TextInput from 'components/inputs/TextInput';
 import LABELS from 'consts/labels';
 import Button from 'components/buttons/Button';
+import { toast } from 'react-toastify';
 
 import { StyledForm, StyledFormField, StyledToastContainer } from './Form.style';
 import { useFlipProvider } from '../FlipProvider';
@@ -14,6 +15,8 @@ import formReducer, { RESET_FORM_STATE, SET_FORM_STATE } from './formReducer';
 import validateField from './validate.schema';
 import useFormGoBack from './hooks/useFormGoBack';
 import FormOverlay from './components/FormOverlay';
+import FormSuccessMessage from './components/FormSuccessMessage';
+import FormErrorMessage from './components/FormErrorMessage';
 
 export default function Form() {
   const [activeFields, setActiveFields] = useState<string[]>([]);
@@ -64,36 +67,28 @@ export default function Form() {
 
     setActiveFields(FORM_FIELDS);
 
-    const error = FORM_FIELDS.some((field) => {
+    const errorField = FORM_FIELDS.some((field) => {
       const fieldValue = formState.form.fields[field as keyof typeof formState.form.fields].value;
       return validateField(fieldValue, field)?.length;
     });
 
-    if (!error) {
-      console.log('submit');
-
-      // emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then(
-      //   (result) => {
-      //     console.log(result.text);
-      // toast.success(<FormSuccessMessage />, {
-      //   autoClose: 5000,
-      //   position: 'top-center',
-      // });
-      //     resetFormState();
-      //   },
-      //   (error) => {
-      // toast.error(LABELS.notififications.emailError, {
-      //   position: "top-center"
-      // });
-      //     console.log(error.text);
-      // toast.error(<FormErrorMessage />, {
-      //   autoClose: 5000,
-      //   position: 'top-center',
-      // });
-      //   }
-      // );
+    if (!errorField) {
+      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then(
+        () => {
+          toast.success(<FormSuccessMessage />, {
+            autoClose: 5000,
+            position: 'top-center',
+          });
+          resetFormState();
+        },
+        () => {
+          toast.error(<FormErrorMessage />, {
+            autoClose: 5000,
+            position: 'top-center',
+          });
+        },
+      );
     }
-    // resetFormState();
   };
 
   return (

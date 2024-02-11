@@ -13,7 +13,8 @@ interface IFlipContextValue {
 
 const FlipContext = createContext<IFlipContextValue | null>(null);
 
-export default function FlipProvider({ children }: IFlipContextType) {
+export default function FlipProvider(props: IFlipContextType) {
+  const { children } = props;
   const [flip, setFlip] = useState(false);
 
   const contextValue = useMemo(() => ({ flip, setFlip }), [flip, setFlip]);

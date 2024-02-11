@@ -27,7 +27,7 @@ export default function TextInput(props: ITextInputProps) {
           type="text"
           value={value}
           onChange={(e) => {
-            handleOnChange(name, e.target.value.trim());
+            handleOnChange(name, e.target.value);
           }}
         />
         {error ? <StyledError>{error}</StyledError> : null}

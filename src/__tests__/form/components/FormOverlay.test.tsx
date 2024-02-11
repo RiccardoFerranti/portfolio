@@ -9,7 +9,7 @@ describe('FormOverlay', () => {
   const renderView = () => renderWithProvider(
     <FormOverlay
       message={message}
-      setShowMessage={(x: boolean) => null}
+      setShowMessage={() => null}
       leaveForm={() => null}
     />,
   );
