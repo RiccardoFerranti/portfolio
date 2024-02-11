@@ -1,10 +1,13 @@
-import styled from "styled-components";
-import { size } from '../consts/breakpoints';
+import styled from 'styled-components';
 
-export const StyledTab = styled.div`
+import BREAKPOINTS from '../consts/breakpoints';
+
+const StyledTab = styled.div`
    width: 344px;
 
-  @media screen and (max-width: ${size.mobile}) {
+  @media screen and (max-width: ${BREAKPOINTS.mobile}) {
     width: 302px;
   }
 `;
+
+export default StyledTab;

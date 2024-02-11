@@ -1,6 +1,7 @@
-import { StyledApp } from "./App.style";
-import GlobalStyle from "./GlobalStyle";
-import Card from "./components/card/Card";
+import Card from 'components/card/Card';
+
+import StyledApp from './App.style';
+import GlobalStyle from './GlobalStyle';
 
 export default function App(): JSX.Element {
   return (

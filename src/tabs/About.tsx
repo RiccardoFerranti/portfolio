@@ -1,11 +1,12 @@
+import profile from 'assets/profile.png';
+
 import {
   StyledAbout,
   StyledProfile,
   StyledTitle,
   StyledSubTitle,
   StyledDescription,
-} from "./About.style";
-import profile from "../assets/profile.png";
+} from './About.style';
 
 export default function About() {
   return (
@@ -17,7 +18,7 @@ export default function About() {
         data-testid="profile-pic"
       />
       <StyledTitle>Riccardo Ferranti</StyledTitle>
-      <StyledSubTitle>Senior Front End Developer</StyledSubTitle>
+      <StyledSubTitle>Lead Front End Developer</StyledSubTitle>
       <StyledDescription>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsa
         pariatur molestiae rem dicta quam incidunt sit amet quae earum corporis

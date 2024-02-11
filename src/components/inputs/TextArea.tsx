@@ -1,8 +1,8 @@
-import { StyledMessageLength, StyledTextArea, StyledTextAreaFooter } from "./TextArea.style";
+import { StyledMessageLength, StyledTextArea, StyledTextAreaFooter } from './TextArea.style';
 import { StyledLabel, StyledError } from './CommonStyle';
-import { MAX_LENGTH_TEXTAREA } from "./const";
+import MAX_LENGTH_TEXTAREA from './const';
 
-interface ITextAreatProps {
+export interface ITextAreatProps {
   name: string;
   label: string;
   value: string;
@@ -12,22 +12,26 @@ interface ITextAreatProps {
 }
 
 export default function TextArea(props: ITextAreatProps) {
-  const { name, label, value, placeholder, handleOnChange, error } = props;
+  const {
+    name, label, value, placeholder, handleOnChange, error,
+  } = props;
 
   return (
     <StyledTextArea $error={error}>
-      <label>
+      <label htmlFor={name}>
         <StyledLabel>{label}</StyledLabel>
         <textarea
+          id={name}
+          data-testid={name}
           name={name}
           placeholder={placeholder}
           value={value}
           onChange={(e) => {
-            handleOnChange(name, e.target.value.trim())
+            handleOnChange(name, e.target.value.trim());
           }}
         />
         <StyledTextAreaFooter>
-          <StyledError>{error ? error : null}</StyledError>
+          <StyledError>{error || null}</StyledError>
           <StyledMessageLength>{`${value.length} / ${MAX_LENGTH_TEXTAREA}`}</StyledMessageLength>
         </StyledTextAreaFooter>
       </label>

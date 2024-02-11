@@ -1,11 +1,14 @@
-import { useRef, TouchEvent } from "react";
-import { TABS_MAX } from "../consts/tabs";
+import {
+  useRef, TouchEvent, Dispatch, SetStateAction,
+} from 'react';
+
+import { TABS_MAX } from '../consts/tabs';
 
 const useSwipeDetection = (
   tabSelected: number,
-  setTabSelected: React.Dispatch<React.SetStateAction<number>>,
+  setTabSelected: Dispatch<SetStateAction<number>>,
   // the required distance between touchStart and touchEnd to be detected as a swipe
-  minSwipeDistance = 50
+  minSwipeDistance = 50,
 ) => {
   const touchStartRef = useRef<number | null>(null);
   const touchEndRef = useRef<number | null>(null);

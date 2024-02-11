@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const useDelayedFlip = (flip: boolean, delay: number = 1000) => {
   const [flipDelayed, setFlipDelayed] = useState(flip);

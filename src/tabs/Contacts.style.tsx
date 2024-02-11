@@ -1,15 +1,16 @@
-import styled, { css } from "styled-components";
-import { FaLinkedinIn } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
-import { BsGeoAltFill } from "react-icons/bs";
-import { PiGithubLogoFill } from "react-icons/pi";
-import { StyledTab } from "./CommonStyle";
+import styled, { css } from 'styled-components';
+import { FaLinkedinIn } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import { BsGeoAltFill } from 'react-icons/bs';
+import { PiGithubLogoFill } from 'react-icons/pi';
+
+import StyledTab from './CommonStyle';
 
 export const StyledContacts = styled(StyledTab)`
   height: 400px;
 `;
 
-export const StyledContactsContent = styled("section")`
+export const StyledContactsContent = styled('section')`
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -20,7 +21,7 @@ export const StyledContactsContent = styled("section")`
   }
 `;
 
-export const StyledContactsContentRow = styled("div")`
+export const StyledContactsContentRow = styled('div')`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -35,7 +36,7 @@ export const StyledContactsContentRow = styled("div")`
   }
 `;
 
-export const StyledIconContainer = styled("div")`
+export const StyledIconContainer = styled('div')`
   display: flex;
   align-items: start;
   width: 40px;

@@ -1,7 +1,7 @@
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect } from 'react';
 
-import { SET_FORM_STATE } from "../form/formReducer";
-import { IInitialFormState } from "../form/consts";
+import { SET_FORM_STATE } from '../formReducer';
+import { IInitialFormState } from '../consts';
 
 const useFormValidation = (formState: IInitialFormState, activeFields: string[] | null, dispatch: any) => {
   const formFieldsStringhified = JSON.stringify(formState.form.fields);
@@ -10,10 +10,10 @@ const useFormValidation = (formState: IInitialFormState, activeFields: string[] 
     fields.forEach((activeField: string) => {
       dispatch({
         type: SET_FORM_STATE,
-        payload: { 
+        payload: {
           value: formState.form.fields[activeField as keyof typeof formState.form.fields].value,
           name: activeField,
-        }
+        },
       });
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -21,8 +21,8 @@ const useFormValidation = (formState: IInitialFormState, activeFields: string[] 
 
   useEffect(() => {
     if (activeFields?.length) {
-      validatedFormState(activeFields)
-    } 
+      validatedFormState(activeFields);
+    }
   }, [activeFields, validatedFormState]);
 };
 
