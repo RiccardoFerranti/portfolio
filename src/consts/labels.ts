@@ -8,6 +8,8 @@ const LABELS = {
     workWithMe: 'Work with me',
     submit: 'Send',
     back: 'Back',
+    yes: 'Yes',
+    no: 'No',
   },
   form: {
     name: {
@@ -55,7 +57,7 @@ const LABELS = {
     accenture: '2007 - 2008',
   },
   positions: {
-    symplystacking: 'Senior Front End Developer',
+    symplystacking: 'Lead Front End Developer',
     catenamedia: 'Senior Front End Developer',
     chiarezza: 'Front End / UI Developer',
     kaleyra: 'Front End / UI Developer',

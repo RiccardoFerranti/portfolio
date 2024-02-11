@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 interface IStyledButton {
   $bgDark?: boolean;
+  $shadow?: boolean;
 }
 
 const StyledButton = styled('button')<IStyledButton>`
@@ -18,6 +19,7 @@ const StyledButton = styled('button')<IStyledButton>`
 
   &:hover {
     box-shadow: 1px 4px 3px -2px rgba(0, 0, 0, 0.4);
+    box-shadow:  ${({ $shadow }) => ($shadow ? '1px 4px 3px -2px rgba(0, 0, 0, 0.4)' : 'none')};
   }
 `;
 

@@ -14,7 +14,11 @@ export const StyledFormOverlayBackgropund = styled.div`
   backdrop-filter: blur(50px);
 `;
 
-export const StyledFormOverlay = styled.div`
+interface IStyledFormOverlay {
+  dataTestid: string;
+}
+
+export const StyledFormOverlay = styled.div<IStyledFormOverlay>`
   width: 300px;
   height: 150px;
   position: absolute;

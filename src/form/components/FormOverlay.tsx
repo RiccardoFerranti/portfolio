@@ -1,4 +1,5 @@
 import Button from 'components/buttons/Button';
+import LABELS from 'consts/labels';
 
 import {
   StyledFormMessage,
@@ -18,13 +19,22 @@ export default function FormOverlay(props: IFormOverlayProps) {
 
   return (
     <StyledFormOverlayBackgropund>
-      <StyledFormOverlay>
+      <StyledFormOverlay dataTestid="form-leave-overlay">
         <StyledFormMessage>
           {message}
         </StyledFormMessage>
         <StyledFormOverlayButtonsWrapper>
-          <Button text="NO" onClick={() => setShowMessage(false)} />
-          <Button text="YES" onClick={() => leaveForm()} bgDark />
+          <Button
+            dataTestid="button-no"
+            text={LABELS.buttons.no}
+            onClick={() => setShowMessage(false)}
+          />
+          <Button
+            dataTestid="button-yes"
+            text={LABELS.buttons.yes}
+            onClick={() => leaveForm()}
+            bgDark
+          />
         </StyledFormOverlayButtonsWrapper>
       </StyledFormOverlay>
     </StyledFormOverlayBackgropund>

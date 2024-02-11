@@ -96,8 +96,6 @@ export default function Form() {
     // resetFormState();
   };
 
-  console.log('activeFields', activeFields);
-
   return (
     <>
       {showMessage
@@ -112,7 +110,7 @@ export default function Form() {
         />
         )}
       <StyledForm>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} data-testid="contact-form">
           <StyledFormField>
             <TextInput
               name={LABELS.form.name.field}
@@ -143,12 +141,17 @@ export default function Form() {
               error={formState.form.fields.message.error}
             />
           </StyledFormField>
-          <Button text={LABELS.buttons.submit} onClick={() => handleSubmit} />
+          <Button
+            text={LABELS.buttons.submit}
+            onClick={() => handleSubmit}
+            dataTestid="button-submit"
+          />
         </form>
         <Button
           text={LABELS.buttons.back}
           onClick={() => handleSetShowMessage()}
           bgDark
+          dataTestid="button-back"
         />
         <StyledToastContainer />
       </StyledForm>

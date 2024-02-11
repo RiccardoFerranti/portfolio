@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import Theme from './Theme';
-import { EPPageBannerProvider } from './FlipProvider';
+import FlipProvider from './FlipProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
@@ -14,9 +14,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={Theme}>
-      <EPPageBannerProvider>
+      <FlipProvider>
         <App />
-      </EPPageBannerProvider>
+      </FlipProvider>
     </ThemeProvider>
   </React.StrictMode>,
 );

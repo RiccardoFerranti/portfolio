@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react';
+import LABELS from 'consts/labels';
 import FormOverlay from 'form/components/FormOverlay';
 import renderWithProvider from 'testUtils';
 
@@ -24,7 +25,7 @@ describe('FormOverlay', () => {
   it('should render the buttons in the form overlay correctly', () => {
     screen.getAllByRole('button').forEach((button, index) => {
       expect(button).toBeInTheDocument();
-      expect(button).toHaveTextContent(index === 0 ? 'NO' : 'YES');
+      expect(button).toHaveTextContent(index === 0 ? LABELS.buttons.no : LABELS.buttons.yes);
     });
   });
 });

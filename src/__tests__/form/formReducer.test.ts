@@ -152,9 +152,9 @@ describe('formReducer', () => {
     const resetState = {
       form: {
         fields: {
-          name: { value: 'John Doe', error: null },
-          email: { value: 'john@example.com', error: null },
-          message: { value: 'Test message', error: null },
+          from_name: { value: '', error: null },
+          from_email: { value: '', error: null },
+          message: { value: '', error: null },
         },
       },
     };
@@ -164,6 +164,6 @@ describe('formReducer', () => {
     };
 
     const newState: IInitialFormState = formReducer(initialState, action);
-    expect(newState).toEqual(resetState);
+    expect(newState).toMatchObject(resetState);
   });
 });

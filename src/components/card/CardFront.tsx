@@ -1,3 +1,5 @@
+import Button from 'components/buttons/Button';
+
 import { StyledCardCLip, StyledCardBadgeCord } from './Card.style';
 import {
   StyledCardFront,
@@ -46,7 +48,12 @@ export default function CardFront(props: ICardFrontProps) {
       <StyledCardNavTabs tabSelected={tabSelected} role="menu">
         {TABS.map((tab, index) => (
           <li role="menuitem" key={tab}>
-            <button type="button" onClick={() => handlSetTab(index + 1)}>{tab}</button>
+            <Button
+              onClick={() => handlSetTab(index + 1)}
+              text={tab}
+              dataTestid={`button-${tab.toLocaleLowerCase()}`}
+              shadow={false}
+            />
           </li>
         ))}
         <li className="tab__slider" />

@@ -1,6 +1,7 @@
 import { FC, ReactElement, PropsWithChildren } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
+import FlipProvider from 'FlipProvider';
 
 import Theme from './Theme';
 
@@ -10,7 +11,9 @@ const renderWithProvider = (
 ): ReturnType<typeof render> => {
   const Wrapper: FC<PropsWithChildren<{}>> = ({ children }) => (
     <ThemeProvider theme={Theme}>
-      {children}
+      <FlipProvider>
+        {children}
+      </FlipProvider>
     </ThemeProvider>
   );
 

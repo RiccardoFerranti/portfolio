@@ -18,7 +18,7 @@ export default function About() {
         data-testid="profile-pic"
       />
       <StyledTitle>Riccardo Ferranti</StyledTitle>
-      <StyledSubTitle>Senior Front End Developer</StyledSubTitle>
+      <StyledSubTitle>Lead Front End Developer</StyledSubTitle>
       <StyledDescription>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsa
         pariatur molestiae rem dicta quam incidunt sit amet quae earum corporis
