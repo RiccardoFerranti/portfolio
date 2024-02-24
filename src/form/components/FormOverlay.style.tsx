@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const StyledFormOverlayBackgropund = styled.div`
   background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1;
   width: 100%;
-  height: 100dvh;
+  height: 548px;
+  border-radius: 8px;
   position: fixed;
   margin: auto;
   top: 0;
@@ -12,6 +12,7 @@ export const StyledFormOverlayBackgropund = styled.div`
   right: 0;
   bottom: 0; 
   backdrop-filter: blur(50px);
+  z-index: 1;
 `;
 
 interface IStyledFormOverlay {

@@ -6,7 +6,7 @@ const StyledCardBack = styled(StyledCard)`
   transform: rotateY(180deg);
   position: absolute;
   // it's needed to contain the blur background of the form
-  overflow: hidden;
+  /* overflow: hidden; */
   z-index: 1;
 `;
 
