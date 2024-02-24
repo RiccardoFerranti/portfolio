@@ -71,13 +71,16 @@ const LABELS = {
     accenture: 'Accenture',
   },
   descriptions: {
-    symplystacking: 'Developing Dapps in the Cosmos ecosystem.',
-    catenamedia: `Development of applications with great business value for
-    the company, interacting through REST API with Backend based on microservices.`,
-    chiarezza: `Creation, mainteance, restyling and adding new features of the company website
-    with mobile first approach.`,
-    kaleyra: `Development and creation of UI for mobile and desktop
-    applications.`,
+    symplystacking: `In my role, I shape engaging user experiences for digital products, including the development of Dapps in the
+    Cosmos ecosystem. I lead the team using the latest technologies to create seamless web applications, collaborating closely 
+    with other departments to meet the requirements and user needs. My role extends to mentorship, planning, and maintaining code 
+    quality and performance.`,
+    catenamedia: `Developing high-value applications to drive business growth, interacting with microservices via REST API 
+    integration. These applications play a crucial role in enhancing company operations and delivering tangible value to 
+    stakeholders.`,
+    chiarezza: `Developing, maintaining, restyling, and implementing new features for the company website with a 
+    mobile-first approach.`,
+    kaleyra: 'Developing and creating user interfaces for both mobile and desktop applications.',
     accenture: `Part of the backend EAI/ETL, planning activities with the
     final customer and managing the work between teams.`,
   },
