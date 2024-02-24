@@ -1,13 +1,11 @@
-import {
-  useState, useReducer, SyntheticEvent, FormEvent,
-} from 'react';
+import { useState, useReducer, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import TextArea from 'components/inputs/TextArea';
 import TextInput from 'components/inputs/TextInput';
 import LABELS from 'consts/labels';
 import Button from 'components/buttons/Button';
-import { toast } from 'react-toastify';
 
 import { StyledForm, StyledFormField, StyledToastContainer } from './Form.style';
 import { useFlipProvider } from '../FlipProvider';
@@ -54,7 +52,6 @@ export default function Form() {
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    console.log(e);
     e.preventDefault();
 
     const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
