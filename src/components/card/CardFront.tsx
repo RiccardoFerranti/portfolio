@@ -50,6 +50,7 @@ export default function CardFront(props: ICardFrontProps) {
           <li role="menuitem" key={tab}>
             <Button
               onClick={() => handlSetTab(index + 1)}
+              aria-label={`Select ${tab}`}
               text={tab}
               dataTestid={`button-${tab.toLocaleLowerCase()}`}
               shadow={false}
