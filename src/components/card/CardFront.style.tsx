@@ -66,19 +66,21 @@ export const StyledCardNavTabs = styled.ul<IStyledCardTabs>`
       cursor: pointer;
     }
 
-    &:nth-child(1):hover ~ li.tab__slider {
-      left: 0;
-      width: 33.333%;
-    }
+    @media (hover: hover) and (pointer: fine) {
+      &:nth-child(1):hover ~ li.tab__slider {
+        left: 0;
+        width: 33.333%;
+      }
 
-    &:nth-child(2):hover ~ li.tab__slider {
-      left: 33.333%;
-      width: 33.333%;
-    }
+      &:nth-child(2):hover ~ li.tab__slider {
+        left: 33.333%;
+        width: 33.333%;
+      }
 
-    &:nth-child(3):hover ~ li.tab__slider {
-      left: 66.666%;
-      width: 33.333%;
+      &:nth-child(3):hover ~ li.tab__slider {
+        left: 66.666%;
+        width: 33.333%;
+      }
     }
 
     &.tab__slider {
