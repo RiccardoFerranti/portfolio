@@ -2,12 +2,20 @@ const Theme = {
   buttons: {
   },
   colors: {
+    black: '#000',
+    aquaLight1: '#45eaef',
+    aquaLight2: '#2ee7e5',
     aqua: '#24c6c3',
     aquaDark: '#107674',
     white: '#fdfdfd',
-    grayLight: '#8a94a7',
-    grayDark: '#323b45',
-    grayDark2: '#242c39',
+    greyLight: '#9fb0c4',
+    grey: '#c5c5c5',
+    greyDark1: '#323b45',
+    greyDark2: '#242c39',
+    greyDark3: '#191919',
+    greyDark4: '#525f7b',
+    greyDark5: '#38424e',
+    greyDark6: '#445161',
     red: '#FF0000',
     body: `radial-gradient(
       100% 225% at 100% 0%, 

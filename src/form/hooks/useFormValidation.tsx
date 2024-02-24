@@ -1,9 +1,9 @@
-import { useCallback, useEffect } from 'react';
+import { Dispatch, useCallback, useEffect } from 'react';
 
-import { SET_FORM_STATE } from '../formReducer';
+import { IAction, SET_FORM_STATE } from '../formReducer';
 import { IInitialFormState } from '../consts';
 
-const useFormValidation = (formState: IInitialFormState, activeFields: string[] | null, dispatch: any) => {
+const useFormValidation = (formState: IInitialFormState, activeFields: string[] | null, dispatch: Dispatch<IAction>) => {
   const formFieldsStringhified = JSON.stringify(formState.form.fields);
 
   const validatedFormState = useCallback((fields: string[]) => {

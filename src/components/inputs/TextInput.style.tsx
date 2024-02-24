@@ -8,9 +8,9 @@ const StyledInputText = styled.div<IStyledInputText>`
   color: ${({ theme }) => theme.colors.white};
 
   input {
-    color: ${({ theme }) => theme.colors.grayDark};
+    color: ${({ theme }) => theme.colors.greyDark1};
     background-color: rgba(255, 255, 255, 0.35);
-    border: 1px solid ${({ theme, $error }) => (!$error ? theme.colors.grayDark : theme.colors.red)};
+    border: 1px solid ${({ theme, $error }) => (!$error ? theme.colors.greyDark1 : theme.colors.red)};
     width: 100%;
     height: 45px;
     box-shadow: none;
@@ -25,7 +25,7 @@ const StyledInputText = styled.div<IStyledInputText>`
     }
 
     &::placeholder {
-      color: ${({ theme }) => theme.colors.grayDark};
+      color: ${({ theme }) => theme.colors.greyDark1};
       opacity: 0.62;
     }
   }

@@ -3,6 +3,7 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { BsGeoAltFill } from 'react-icons/bs';
 import { PiGithubLogoFill } from 'react-icons/pi';
+import BREAKPOINTS from 'consts/breakpoints';
 
 import StyledTab from './CommonStyle';
 
@@ -33,6 +34,7 @@ export const StyledContactsContentRow = styled('div')`
     align-items: center;
     color: ${({ theme }) => theme.colors.white};
     text-decoration: none;
+    font-weight: 400;
   }
 `;
 
@@ -40,11 +42,19 @@ export const StyledIconContainer = styled('div')`
   display: flex;
   align-items: start;
   width: 40px;
+
+  @media screen and (max-width: ${BREAKPOINTS.mobile}) {
+    width: 25px;
+  }
 `;
 
 const commonIconStyles = css`
-  color: #24c6c3;
+  color: ${({ theme }) => theme.colors.aqua};
   font-size: 24px;
+
+  @media screen and (max-width: ${BREAKPOINTS.mobile}) {
+    width: 20px;
+  }
 `;
 
 export const StyledFaLinkedinIn = styled(FaLinkedinIn)`

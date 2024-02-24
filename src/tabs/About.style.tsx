@@ -36,4 +36,5 @@ export const StyledDescription = styled.p`
   margin-top: 20px;
   color: ${({ theme }) => theme.colors.white};
   line-height: 20px;
+  font-weight: 400;
 `;

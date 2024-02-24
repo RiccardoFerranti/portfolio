@@ -8,9 +8,9 @@ interface IStyledButton {
 const StyledButton = styled('button')<IStyledButton>`
   width: 100%;
   height: 54px;
-  background-color: ${({ theme, $bgDark }) => (!$bgDark ? theme.colors.aqua : theme.colors.grayDark)};
+  background-color: ${({ theme, $bgDark }) => (!$bgDark ? theme.colors.aqua : theme.colors.greyDark1)};
   border: 1px solid
-    ${({ theme, $bgDark }) => (!$bgDark ? theme.colors.aquaDark : theme.colors.grayDark2)};
+    ${({ theme, $bgDark }) => (!$bgDark ? theme.colors.aquaDark : theme.colors.greyDark2)};
   text-transform: uppercase;
   color: ${({ theme }) => theme.colors.white};
   font-size: 22px;

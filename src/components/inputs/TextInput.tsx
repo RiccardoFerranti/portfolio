@@ -7,7 +7,7 @@ export interface ITextInputProps {
   value: string;
   placeholder: string;
   error: string | null;
-  handleOnChange: any;
+  handleOnChange: (name: string, value: string) => void;
 }
 
 export default function TextInput(props: ITextInputProps) {

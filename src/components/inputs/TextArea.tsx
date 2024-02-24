@@ -8,7 +8,7 @@ export interface ITextAreatProps {
   value: string;
   placeholder: string;
   error: string | null;
-  handleOnChange: any
+  handleOnChange: (name: string, value: string) => void;
 }
 
 export default function TextArea(props: ITextAreatProps) {

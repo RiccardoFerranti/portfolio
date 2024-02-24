@@ -1,4 +1,6 @@
-import { useState, useReducer } from 'react';
+import {
+  useState, useReducer, SyntheticEvent, FormEvent,
+} from 'react';
 import emailjs from '@emailjs/browser';
 import 'react-toastify/dist/ReactToastify.css';
 import TextArea from 'components/inputs/TextArea';
@@ -51,7 +53,8 @@ export default function Form() {
     setFormState(name, value);
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    console.log(e);
     e.preventDefault();
 
     const SERVICE_ID = process.env.REACT_APP_SERVICE_ID;
@@ -72,8 +75,10 @@ export default function Form() {
       return validateField(fieldValue, field)?.length;
     });
 
+    const formElement = e.target as HTMLFormElement;
+
     if (!errorField) {
-      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY).then(
+      emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formElement, PUBLIC_KEY).then(
         () => {
           toast.success(<FormSuccessMessage />, {
             autoClose: 5000,

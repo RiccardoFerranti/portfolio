@@ -47,7 +47,7 @@ export const StyledCardNavTabs = styled.ul<IStyledCardTabs>`
   height: 80px;
   margin-bottom: -22px;
   position: relative;
-  border-top: 2px solid #445161;
+  border-top: ${({ theme }) => `2px solid  ${theme.colors.greyDark6}`};
   z-index: 3;
 
   li {
@@ -58,9 +58,9 @@ export const StyledCardNavTabs = styled.ul<IStyledCardTabs>`
       height: 100%;
       width: 100%;
       font-size: 14px;
+      font-weight: 500;
       color: ${({ theme }) => theme.colors.white};
       text-transform: uppercase;
-      font-weight: 300;
       background: none;
       border: none;
       cursor: pointer;
@@ -101,7 +101,7 @@ export const StyledCardNavTabs = styled.ul<IStyledCardTabs>`
         width: 33.333%;
         padding: 0;
         height: 2px;
-        background-color: #45eaef;
+        background-color: ${({ theme }) => theme.colors.aquaLight1};
         font-weight: 400;
         z-index: 3;
 

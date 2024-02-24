@@ -27,7 +27,7 @@ export const StyledExperienceTimeline = styled('div')`
     bottom: 0rem;
     left: 80px;
     z-index: 1;
-    background: #c5c5c5;
+    background: ${({ theme }) => theme.colors.grey};
   }
 `;
 
@@ -52,12 +52,7 @@ export const StyledExperienceTimelineContent = styled('div')`
     font-size: 14px;
     font-weight: 600;
     color: ${({ theme }) => theme.colors.white};
-  }
-
-  @-moz-document url-prefix() {
-    h4 {
-      margin-bottom: 3px;
-    }
+    margin-bottom: 3px;
   }
 
   h5 {
@@ -65,7 +60,7 @@ export const StyledExperienceTimelineContent = styled('div')`
     font-weight: 400;
     color: ${({ theme }) => theme.colors.white};
     font-style: italic;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
   }
 
   p {
@@ -82,7 +77,7 @@ export const StyledExperienceTimelineContent = styled('div')`
 
   &:hover {
     &:first-of-type:after {
-      background: #2ee7e5;
+      background: ${({ theme }) => theme.colors.aquaLight1};
     }
   }
 
@@ -90,8 +85,8 @@ export const StyledExperienceTimelineContent = styled('div')`
     content: "";
     width: 10px;
     height: 10px;
-    background: #c5c5c5;
-    border: 3px solid #525f7b;
+    background: ${({ theme }) => theme.colors.grey};
+    border: ${({ theme }) => `3px solid ${theme.colors.greyDark4}`};
     border-radius: 50%;
     position: absolute;
     top: 0;
@@ -119,8 +114,8 @@ export const StyledExperienceTimelineTags = styled('ul')`
     margin-right: 5px;
     margin-bottom: 3px;
     padding: 3px;
-    background-color: #38424e;
+    background-color: ${({ theme }) => theme.colors.greyDark5};
     border-radius: 4px;
-    border: 1px solid #9fb0c4;
+    border: ${({ theme }) => `1px solid ${theme.colors.greyLight}`};
   }
 `;

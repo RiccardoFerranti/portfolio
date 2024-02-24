@@ -5,7 +5,7 @@ export const StyledCardCLip = styled.div`
   height: 33px;
   margin: 8px auto 0;
   border: ${({ theme }) => `4px solid  ${theme.colors.aqua}`};
-  background-color: #191919;
+  background-color: ${({ theme }) => theme.colors.greyDark3};
   border-radius: 16px;
   display: flex;
   align-self: flex-start;
@@ -20,13 +20,13 @@ interface IStyledCardBadgeCord {
 export const StyledCardBadgeCord = styled('div')<IStyledCardBadgeCord>`
   width: 54px;
   height: 69px;
-  background: #000;
+  background: ${({ theme }) => theme.colors.black};
   transform: ${({ $flip }) => (!$flip ? 'skew(25deg)' : 'skew(-25deg)')};
   position: absolute;
   top: -15px;
   left: ${({ $flip }) => (!$flip ? 'calc(50% - 44px)' : 'calc(50% - 10px)')};
+  box-shadow: ${({ theme }) => `0px -3px 3px  ${theme.colors.black}`};
   z-index: 4;
-  box-shadow: 0px -3px 3px #000;
 `;
 
 export const StyledCardBody = styled.div`

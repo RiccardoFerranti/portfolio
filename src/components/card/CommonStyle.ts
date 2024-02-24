@@ -44,13 +44,13 @@ export const StyledCard = styled.div`
   height: 560px;
   background: rgba(118,131,150,.8);
   background: radial-gradient(circle, rgba(118,131,150,.8) 0%, rgba(96,113,137,.8) 25%, rgba(59,69,81,.8) 100%);
-  border: 6px solid #2ee7e5;
+  border: ${({ theme }) => `6px solid ${theme.colors.aquaLight2}`};
   border-radius: 12px;
   padding: 22px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  box-shadow: inset 0px 0px 4px #000;
+  box-shadow: ${({ theme }) => `inset 0px 0px 4px ${theme.colors.black}`};
   
   // it will prevent the back face of the card from being visible during the flip animation.
   backface-visibility: hidden;
@@ -62,7 +62,7 @@ export const StyledCard = styled.div`
     top: -4px;
     left: -4px;
     border-radius: 12px;
-    border: 4px solid #45eaef;
+    border: ${({ theme }) => `4px solid ${theme.colors.aquaLight1}`};
     position: absolute;
   }
 

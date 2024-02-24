@@ -11,7 +11,12 @@ interface IFlipContextValue {
   setFlip: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const FlipContext = createContext<IFlipContextValue | null>(null);
+const defaultContextValue: IFlipContextValue = {
+  flip: false,
+  setFlip: () => {},
+};
+
+const FlipContext = createContext<IFlipContextValue>(defaultContextValue);
 
 export default function FlipProvider(props: IFlipContextType) {
   const { children } = props;
@@ -24,6 +29,6 @@ export default function FlipProvider(props: IFlipContextType) {
   );
 }
 
-export function useFlipProvider(): any | null {
+export function useFlipProvider(): IFlipContextValue {
   return useContext(FlipContext);
 }

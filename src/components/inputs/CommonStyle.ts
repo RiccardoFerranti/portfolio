@@ -6,6 +6,6 @@ export const StyledLabel = styled.p`
 
 export const StyledError = styled.p`
   font-size: 13px;
-  color: #ff0000;
+  color: ${({ theme }) => theme.colors.red};
   margin-top: 3px;
 `;
