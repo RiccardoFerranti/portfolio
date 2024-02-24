@@ -20,9 +20,8 @@ export default function About() {
       <StyledTitle>Riccardo Ferranti</StyledTitle>
       <StyledSubTitle>Lead Front End Developer</StyledSubTitle>
       <StyledDescription>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsa
-        pariatur molestiae rem dicta quam incidunt sit amet quae earum corporis
-        vero accusantium, dolore est! Neque molestiae libero hic ab?
+        In this role, I guide the development, leveraging cutting-edge technologies to ensure our projects deliver
+        outstanding user experiences. I mentor the team for continuous improvement and I steer the project direction.
       </StyledDescription>
     </StyledAbout>
   );
