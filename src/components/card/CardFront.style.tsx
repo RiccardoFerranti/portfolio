@@ -90,7 +90,7 @@ export const StyledCardNavTabs = styled.ul<IStyledCardTabs>`
       top: -2px;
       left: 0;
       padding: 0;
-      background-color: ${({ theme }) => theme.colors.aqua};
+      background-color: ${({ theme }) => theme.colors.aquaLight1};
       z-index: 3;
     }
 
