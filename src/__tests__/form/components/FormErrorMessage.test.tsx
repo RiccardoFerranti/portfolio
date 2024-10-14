@@ -4,14 +4,16 @@ import FormErrorMessage from 'form/components/FormErrorMessage';
 import renderWithProvider from 'testUtils';
 
 describe('FormErrorMessage', () => {
-  const renderView = () => renderWithProvider(<FormErrorMessage />);
-
-  beforeEach(() => {
-    renderView();
+  it('should render the `default` error message correctly', () => {
+    renderWithProvider(<FormErrorMessage />);
+    expect(screen.getByText(LABELS.notififications.emailError)).toBeInTheDocument();
   });
 
-  it('should render the error message correctly', () => {
-    expect(screen.getByText(LABELS.notififications.emailError)).toBeInTheDocument();
+  it('should render the error message provided correctly', () => {
+    const errorMessage = 'test error message';
+    renderWithProvider(<FormErrorMessage error={errorMessage} />);
+
+    expect(screen.getByText(errorMessage)).toBeInTheDocument();
   });
 });
 
