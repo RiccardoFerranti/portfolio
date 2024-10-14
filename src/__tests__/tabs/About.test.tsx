@@ -23,7 +23,7 @@ describe('About', () => {
   });
 
   it('should render the description correctly', () => {
-    const descriptionElement = screen.getByText(/Lorem ipsum dolor/i);
+    const descriptionElement = screen.getByText(/In this role, I guide the development/i);
     expect(descriptionElement).toBeInTheDocument();
   });
 });
