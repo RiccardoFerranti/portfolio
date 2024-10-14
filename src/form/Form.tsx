@@ -83,8 +83,8 @@ export default function Form() {
           });
           resetFormState();
         },
-        () => {
-          toast.error(<FormErrorMessage />, {
+        (error) => {
+          toast.error(<FormErrorMessage error={error} />, {
             autoClose: 5000,
             position: 'top-center',
           });
