@@ -1,6 +1,27 @@
-import BREAKPOINTS from 'consts/breakpoints';
+import styled, { keyframes } from 'styled-components';
 import { ToastContainer } from 'react-toastify';
-import styled from 'styled-components';
+import BREAKPOINTS from 'consts/breakpoints';
+
+const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
+
+export const StyledSpinnerWrapper = styled.div`
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-top: 20px;
+`;
+
+export const StyledSpinner = styled.div`
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #fff; /* Blue color for the spinner */
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation: ${spin} 1s linear infinite;
+`;
 
 export const StyledForm = styled('div')`
   height: 100%;

@@ -40,6 +40,7 @@ export const StyledFormMessage = styled.div`
 
 export const StyledFormOverlayButtonsWrapper = styled.div`
   display: flex;
+  justify-content: center;
 
   button {
     margin: 10px;

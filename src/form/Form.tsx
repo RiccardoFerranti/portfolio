@@ -7,7 +7,13 @@ import TextInput from 'components/inputs/TextInput';
 import LABELS from 'consts/labels';
 import Button from 'components/buttons/Button';
 
-import { StyledForm, StyledFormField, StyledToastContainer } from './Form.style';
+import {
+  StyledForm,
+  StyledFormField,
+  StyledSpinner,
+  StyledSpinnerWrapper,
+  StyledToastContainer,
+} from './Form.style';
 import { useFlipProvider } from '../FlipProvider';
 import useFormValidation from './hooks/useFormValidation';
 import { FORM_FIELDS, initialFormState } from './consts';
@@ -17,6 +23,7 @@ import useFormGoBack from './hooks/useFormGoBack';
 import FormOverlay from './components/FormOverlay';
 import FormSuccessMessage from './components/FormSuccessMessage';
 import FormErrorMessage from './components/FormErrorMessage';
+import FormOverlayButtons from './components/FormOverlayButtons';
 
 export default function Form() {
   const [activeFields, setActiveFields] = useState<string[]>([]);
@@ -70,11 +77,11 @@ export default function Form() {
       dispatch(setFormSubmitting());
       emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formElement, PUBLIC_KEY).then(
         () => {
+          handleResetFormState();
           toast.success(<FormSuccessMessage />, {
             autoClose: 5000,
             position: 'top-center',
           });
-          handleResetFormState();
         },
         (error) => {
           dispatch(setFormSubmitting(false));
@@ -88,18 +95,23 @@ export default function Form() {
   };
 
   const formOverlayLeave = showMessage && !formState.form.isSubmitting && (
-    <FormOverlay
-      message={LABELS.notififications.leaveForm}
-      setShowMessage={setShowMessage}
-      leaveForm={() => {
-        onLeaveForm();
-        setShowMessage(false);
-      }}
-    />
+    <FormOverlay message={LABELS.notififications.leaveForm}>
+      <FormOverlayButtons
+        setShowMessage={setShowMessage}
+        leaveForm={() => {
+          onLeaveForm();
+          setShowMessage(false);
+        }}
+      />
+    </FormOverlay>
   );
 
   const formOverlaySubmitting = formState.form.isSubmitting && (
-    <FormOverlay message={LABELS.notififications.emailSubmitting} />
+    <FormOverlay message={LABELS.notififications.emailSubmitting}>
+      <StyledSpinnerWrapper>
+        <StyledSpinner />
+      </StyledSpinnerWrapper>
+    </FormOverlay>
   );
 
   return (

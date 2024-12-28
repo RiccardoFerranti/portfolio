@@ -1,5 +1,4 @@
-import Button from 'components/buttons/Button';
-import LABELS from 'consts/labels';
+import { ReactElement, ReactNode } from 'react';
 
 import {
   StyledFormMessage,
@@ -9,29 +8,16 @@ import {
 } from './FormOverlay.style';
 
 interface IFormOverlayProps {
-  message: string | React.ReactElement
-  setShowMessage?: (x: boolean) => void;
-  leaveForm?: () => void;
+  message: string | ReactElement;
+  children?: ReactNode;
 }
 
 export default function FormOverlay(props: IFormOverlayProps) {
-  const { message, setShowMessage, leaveForm } = props;
+  const { message, children } = props;
 
-  const areBussonsVisible = setShowMessage && leaveForm;
-
-  const buttons = areBussonsVisible && (
+  const buttons = children && (
     <StyledFormOverlayButtonsWrapper>
-      <Button
-        dataTestid="button-no"
-        text={LABELS.buttons.no}
-        onClick={() => setShowMessage(false)}
-      />
-      <Button
-        dataTestid="button-yes"
-        text={LABELS.buttons.yes}
-        onClick={() => leaveForm()}
-        bgDark
-      />
+      {children}
     </StyledFormOverlayButtonsWrapper>
   );
 
