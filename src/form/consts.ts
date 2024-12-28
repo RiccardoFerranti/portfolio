@@ -15,7 +15,8 @@ export interface IInitialFormState {
         value: string,
         error: null,
       },
-    }
+    },
+    isSubmitting?: boolean,
   }
 }
 
@@ -35,6 +36,7 @@ export const initialFormState: IInitialFormState = {
         error: null,
       },
     },
+    isSubmitting: false,
   },
 };
 

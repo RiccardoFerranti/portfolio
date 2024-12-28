@@ -11,7 +11,7 @@ import { StyledForm, StyledFormField, StyledToastContainer } from './Form.style'
 import { useFlipProvider } from '../FlipProvider';
 import useFormValidation from './hooks/useFormValidation';
 import { FORM_FIELDS, initialFormState } from './consts';
-import formReducer, { RESET_FORM_STATE, SET_FORM_STATE } from './formReducer';
+import formReducer, { resetFormState, setFormState, setFormSubmitting } from './formReducer';
 import validateField from './validate.schema';
 import useFormGoBack from './hooks/useFormGoBack';
 import FormOverlay from './components/FormOverlay';
@@ -26,29 +26,21 @@ export default function Form() {
 
   useFormValidation(formState, activeFields, dispatch);
 
-  const resetFormState = () => {
+  const handleResetFormState = () => {
     setActiveFields([]);
-
-    dispatch({ type: RESET_FORM_STATE });
+    dispatch(resetFormState());
   };
 
   const onLeaveForm = () => {
     setFlip(false);
-    resetFormState();
+    handleResetFormState();
   };
 
   const { handleSetShowMessage, showMessage, setShowMessage } = useFormGoBack(formState, onLeaveForm);
 
-  const setFormState = (name: string, value: string) => {
-    dispatch({
-      type: SET_FORM_STATE,
-      payload: { value, name },
-    });
-  };
-
   const handleOnChange = (name: string, value: string) => {
     setActiveFields(() => [name]);
-    setFormState(name, value);
+    dispatch(setFormState(name, value));
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -75,15 +67,17 @@ export default function Form() {
     const formElement = e.target as HTMLFormElement;
 
     if (!errorField) {
+      dispatch(setFormSubmitting());
       emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formElement, PUBLIC_KEY).then(
         () => {
           toast.success(<FormSuccessMessage />, {
             autoClose: 5000,
             position: 'top-center',
           });
-          resetFormState();
+          handleResetFormState();
         },
         (error) => {
+          dispatch(setFormSubmitting(false));
           toast.error(<FormErrorMessage error={error} />, {
             autoClose: 5000,
             position: 'top-center',
@@ -93,19 +87,25 @@ export default function Form() {
     }
   };
 
+  const formOverlayLeave = showMessage && !formState.form.isSubmitting && (
+    <FormOverlay
+      message={LABELS.notififications.leaveForm}
+      setShowMessage={setShowMessage}
+      leaveForm={() => {
+        onLeaveForm();
+        setShowMessage(false);
+      }}
+    />
+  );
+
+  const formOverlaySubmitting = formState.form.isSubmitting && (
+    <FormOverlay message={LABELS.notififications.emailSubmitting} />
+  );
+
   return (
     <>
-      {showMessage
-        && (
-        <FormOverlay
-          message={LABELS.notififications.leaveForm}
-          setShowMessage={setShowMessage}
-          leaveForm={() => {
-            onLeaveForm();
-            setShowMessage(false);
-          }}
-        />
-        )}
+      {formOverlayLeave}
+      {formOverlaySubmitting}
       <StyledForm>
         <form onSubmit={handleSubmit} data-testid="contact-form">
           <StyledFormField>

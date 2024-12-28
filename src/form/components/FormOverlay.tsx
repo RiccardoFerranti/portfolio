@@ -10,12 +10,30 @@ import {
 
 interface IFormOverlayProps {
   message: string | React.ReactElement
-  setShowMessage: (x: boolean) => void;
-  leaveForm: () => void;
+  setShowMessage?: (x: boolean) => void;
+  leaveForm?: () => void;
 }
 
 export default function FormOverlay(props: IFormOverlayProps) {
   const { message, setShowMessage, leaveForm } = props;
+
+  const areBussonsVisible = setShowMessage && leaveForm;
+
+  const buttons = areBussonsVisible && (
+    <StyledFormOverlayButtonsWrapper>
+      <Button
+        dataTestid="button-no"
+        text={LABELS.buttons.no}
+        onClick={() => setShowMessage(false)}
+      />
+      <Button
+        dataTestid="button-yes"
+        text={LABELS.buttons.yes}
+        onClick={() => leaveForm()}
+        bgDark
+      />
+    </StyledFormOverlayButtonsWrapper>
+  );
 
   return (
     <StyledFormOverlayBackgropund>
@@ -23,19 +41,7 @@ export default function FormOverlay(props: IFormOverlayProps) {
         <StyledFormMessage>
           {message}
         </StyledFormMessage>
-        <StyledFormOverlayButtonsWrapper>
-          <Button
-            dataTestid="button-no"
-            text={LABELS.buttons.no}
-            onClick={() => setShowMessage(false)}
-          />
-          <Button
-            dataTestid="button-yes"
-            text={LABELS.buttons.yes}
-            onClick={() => leaveForm()}
-            bgDark
-          />
-        </StyledFormOverlayButtonsWrapper>
+        {buttons}
       </StyledFormOverlay>
     </StyledFormOverlayBackgropund>
   );

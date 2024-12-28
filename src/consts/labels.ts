@@ -1,5 +1,6 @@
 const LABELS = {
   notififications: {
+    emailSubmitting: 'Sending email...',
     emailSuccess: 'Thank you for having contacted me. I\'ll reply you soon!',
     emailError: 'The email wasn\'t sent. An unexpected error occurred. Please try again.',
     leaveForm: 'You are about to leave the form. Are you sure you want to proceed? All the data will be lost.',
